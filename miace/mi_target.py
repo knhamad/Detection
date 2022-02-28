@@ -199,7 +199,7 @@ def kmeans_init(pos_databags, neg_databags, parameters):
         k_means = KMeans(n_clusters=min(len(pos_data), parameters['init_k']), max_iter=parameters['max_iter'])
         C = k_means.fit(pos_data)
 
-    temp_obj_val = [None] * len(C.labels_)
+    temp_obj_val = [None] * C.n_clusters
 
     # Loop through cluster centers
     for i, centroid in enumerate(C.cluster_centers_):
